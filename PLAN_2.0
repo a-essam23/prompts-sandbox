@@ -1,0 +1,399 @@
+# Implementation Plan: [Project Name]
+
+<!-- META -->
+**Last Updated**: [YYYY-MM-DD] | **By**: [Human/AI] | **Phase**: [X.Y] | **Token Budget**: ~[estimate]
+
+---
+
+## 🚀 Plan Creation Process
+
+### Step 1: Check for agents.md
+- [ ] Look for `agents.md` or `.ai/agents.md` in project root
+- [ ] If exists: Read agent definitions, roles, and handoff protocols
+- [ ] Adapt this plan to match defined agent responsibilities
+- [ ] Note primary agent for this plan: [Agent Name/Role]
+
+### Step 2: Determine Template Scale
+```
+Quick Decision Tree:
+- Single feature, <5 files, prototype? → Use sections: 1, 2, 3, 4, 5
+- Multiple features, 5-20 files, internal tool? → Add sections: 6, 7, 8, 9
+- Production system, 20+ files, business-critical? → Use all sections
+```
+
+### Step 3: Populate Incrementally
+1. Start with Executive Summary (§2) and current stage only
+2. Add Implementation Details (§5) as you work, not upfront
+3. Update Session Checkpoint (§2.4) at end of each session
+4. Fill Decisions (§6) immediately when blocked
+5. Defer Risk (§10), Testing (§11), Deployment (§12) until relevant
+
+### Step 4: State Transitions
+**Mark ✅ when**: All acceptance criteria pass + checklist complete
+**Mark 🚧 when**: First file created/modified in stage
+**Mark ⏳ when**: Dependencies not yet met
+
+---
+
+## 📑 Table of Contents
+
+**Quick Links**: Jump to section by number (e.g., "Update §2.3")
+
+| § | Section | Token Est. | Required For |
+|---|---------|-----------|--------------|
+| 1 | [Context & Architecture](#1-context--architecture) | 500 | All |
+| 2 | [Executive Summary & Status](#2-executive-summary--status) | 300 | All |
+| 3 | [Code Patterns](#3-code-patterns) | 400 | All |
+| 4 | [Implementation Roadmap](#4-implementation-roadmap) | 600 | All |
+| 5 | [Detailed Implementation](#5-detailed-implementation) | Variable | All |
+| 6 | [Decisions Required](#6-decisions-required) | 200 | Standard+ |
+| 7 | [File Dependencies](#7-file-dependencies) | 300 | Standard+ |
+| 8 | [Technical Decisions Log](#8-technical-decisions-log) | 400 | Standard+ |
+| 9 | [Quality Gates](#9-quality-gates) | 300 | Standard+ |
+| 10 | [Risk & Technical Debt](#10-risk--technical-debt) | 400 | Comprehensive |
+| 11 | [Testing Strategy](#11-testing-strategy) | 500 | Comprehensive |
+| 12 | [Deployment & Monitoring](#12-deployment--monitoring) | 600 | Comprehensive |
+| 13 | [Appendix](#13-appendix) | Variable | As needed |
+
+---
+
+<!-- SECTION:CONTEXT -->
+## 1. Context & Architecture
+
+**Project Type**: [React/Next.js/Vue] + [TypeScript/JavaScript]  
+**Stack**: [Key libraries with versions]  
+**Node**: [X.X.X] | **PM**: [npm/yarn/pnpm] | **Build**: [Vite/Webpack]
+
+### 1.1 What We're Building
+[2-sentence user-facing description]
+
+### 1.2 Technical Approach
+- **Frontend**: [Choice + why]
+- **State**: [Pattern + tool]
+- **API**: [Strategy]
+- **Performance**: [Key optimization]
+
+### 1.3 Directory Structure
+```
+src/
+├── [feature-based, not layer-based]
+└── [key files only]
+```
+
+---
+
+<!-- SECTION:STATUS -->
+## 2. Executive Summary & Status
+
+**Goal**: [One sentence]  
+**Progress**: [X%] | **Next**: [Specific task, target: YYYY-MM-DD]
+
+### 2.1 Phase Progress
+```
+Phase 1: Foundation        ████████████ 100% ✅
+Phase 2: Core Features     ████████░░░░  67% 🚧 ← Current
+Phase 3: Advanced          ░░░░░░░░░░░░   0% ⏳
+Phase 4: Production        ░░░░░░░░░░░░   0% ⏳
+```
+
+### 2.2 Recent Achievements
+- ✅ [Milestone] - [Date]
+- 🚧 [Current work] - [Est. completion]
+
+### 2.3 Next 3 Actions
+1. **[Task]** - [Why critical] - [Est: Xh]
+2. **[Task]** - [Dependency] - [Est: Xh]
+3. **[Task]** - [Blocker if any] - [Est: Xh]
+
+### 2.4 Session Checkpoint
+**Last Modified**: `path/to/file.ts:line` - [What changed]  
+**System State**: [What's working/broken]  
+**Next Command**: `[exact command]`  
+**Open Questions**: [List for human decision]  
+**Files Open**: [Current editor context]  
+**Context**: [2-3 sentences for next session]
+
+---
+
+<!-- SECTION:PATTERNS -->
+## 3. Code Patterns
+
+### 3.1 Established Patterns (reference only, don't recreate)
+```typescript
+// Pattern Name - When to use
+const example = () => {
+  // Minimal implementation showing structure
+};
+```
+
+### 3.2 Naming Conventions
+- Components: `PascalCase.tsx`
+- Hooks: `useCamelCase.ts`
+- Utils: `camelCase.ts`
+- Types: `PascalCase` (interface/type)
+- Constants: `UPPER_SNAKE_CASE`
+
+### 3.3 Anti-Patterns (❌ Don't → ✅ Do)
+```typescript
+❌ state.users.push(newUser);
+✅ setState({ users: [...state.users, newUser] });
+```
+
+### 3.4 Artifact Strategy
+- **Single artifact per response** - Claude limitation
+- **Split at**: 150 lines/component OR 3+ responsibilities
+- **Split strategy**: Extract hooks → Sub-components → Utils
+- **Naming**: Match file structure exactly
+
+---
+
+<!-- SECTION:ROADMAP -->
+## 4. Implementation Roadmap
+
+### Phase 1: Foundation ✅
+**Goal**: [Outcome] | **Completed**: [Date]
+- 1.1: [Task] ✅
+- 1.2: [Task] ✅
+
+### Phase 2: Core Features 🚧
+**Goal**: [Outcome] | **Progress**: X/Y stages
+- 2.1: [Task] ✅
+- 2.2: [Task] 🚧 ← Current
+- 2.3: [Task] ⏳
+
+### Phase 3: Advanced ⏳
+**Goal**: [Outcome] | **Depends on**: Phase 2
+- 3.1: [Task] ⏳
+
+### Phase 4: Production ⏳
+**Goal**: [Outcome] | **Depends on**: Phase 3
+- 4.1: [Task] ⏳
+
+---
+
+<!-- SECTION:IMPLEMENTATION -->
+## 5. Detailed Implementation
+
+### Phase X: [Name] [Status]
+
+#### Stage X.Y: [Goal] [Status]
+
+**Target**: [Date] | **Progress**: [X%] | **Est. Remaining**: [Xh]
+
+**Acceptance Criteria** (executable test format):
+```typescript
+// Test: [Description]
+Input: { field: "value" }
+Expected: { status: 200, data: { id: string, field: "value" } }
+
+// Test: [Error case]
+Input: { field: "" }
+Expected: { status: 400, error: { message: "...", field: "field" } }
+```
+
+**Implementation Steps**:
+1. **[Next task]** - [Est: Xh]
+   - Validation: [Rules]
+   - Error handling: [Approach]
+   - Returns: [Type signature]
+
+**Files to Create/Modify**:
+- 🚧 `path/to/file.tsx` - [Purpose] - [Status: X% done, Remaining: Y]
+- ⏳ `path/to/hook.ts` - [Purpose] - [Depends on: file.tsx]
+
+**Known Gotchas**:
+- **[Issue]**: Happens when [condition]
+  - Fix: [Specific solution]
+  - Code: `[snippet if short]`
+
+**Completion Checklist**:
+- [ ] `npx tsc --noEmit` passes
+- [ ] Component renders without errors
+- [ ] Manual test: [Specific user flow]
+- [ ] State updates on [action]
+- [ ] Error states work
+- [ ] Loading states work
+- [ ] Keyboard navigation works
+- [ ] Renders in <16ms
+
+**Discoveries** (populate as you work):
+- **[Date]**: [Key learning]
+  - Problem: [Expected vs actual]
+  - Solution: [How resolved]
+  - Impact: [Future implications]
+
+**Tech Debt Created**:
+- **[Item]**: [Why necessary] | Refactor in: Stage X.Y | Effort: Xh
+
+---
+
+<!-- SECTION:DECISIONS -->
+## 6. Decisions Required
+
+**Format**: | Decision | Options | Recommendation | Status |
+
+| # | Decision | Options Considered | AI Recommendation | Human Decision | Date |
+|---|----------|-------------------|-------------------|----------------|------|
+| 1 | [Topic] | A: [desc], B: [desc] | [A because...] | ⏳ Pending | - |
+| 2 | [Topic] | A: [desc], B: [desc] | [B because...] | ✅ Chose B | [Date] |
+
+---
+
+<!-- SECTION:DEPENDENCIES -->
+## 7. File Dependencies
+
+### 7.1 Visual Map
+```mermaid
+graph TD
+    A[App.tsx] --> B[Component.tsx]
+    B --> C[useHook.ts]
+    C --> D[service.ts]
+```
+
+### 7.2 Creation Order
+1. `path/file1.ts` - No deps
+2. `path/file2.ts` - Deps: file1
+3. `path/file3.tsx` - Deps: file1, file2
+
+---
+
+<!-- SECTION:TECH-DECISIONS -->
+## 8. Technical Decisions Log
+
+| Date | Decision | Options | Chosen | Reasoning | Outcome |
+|------|----------|---------|--------|-----------|---------|
+| [Date] | [Topic] | A/B/C | [Choice] | [Why] | [Result] |
+
+---
+
+<!-- SECTION:QUALITY -->
+## 9. Quality Gates
+
+### 9.1 Functional Requirements
+- [ ] User can [measurable outcome]
+- [ ] System handles X concurrent ops
+
+### 9.2 Performance Targets
+- [ ] Page load: <Xms (Lighthouse)
+- [ ] API p95: <Yms
+- [ ] Bundle: <ZKB gzipped
+
+### 9.3 Production Readiness
+- [ ] Error boundary catches [types]
+- [ ] Monitoring tracks [metrics]
+- [ ] Rate limiting: X req/s
+- [ ] Graceful degradation when [service] down
+
+---
+
+<!-- SECTION:RISK -->
+## 10. Risk & Technical Debt
+
+### 10.1 Active Risks
+**High**: [Risk] - Impact: [desc]
+- Mitigation: [Action + timeline]
+- Warning signs: [What to monitor]
+- Contingency: [Backup plan]
+
+**Medium**: [Risk] - Review: [Date]
+
+### 10.2 Technical Debt Registry
+| Item | Stage | Impact | Priority | Effort | Target |
+|------|-------|--------|----------|--------|--------|
+| [Debt] | X.Y | H/M/L | 1-5 | Xh | Stage Z |
+
+---
+
+<!-- SECTION:TESTING -->
+## 11. Testing Strategy
+
+### 11.1 Unit Test Pattern
+```typescript
+describe('Feature', () => {
+  it('should [behavior] when [condition]', () => {
+    // Arrange, Act, Assert
+  });
+});
+```
+
+### 11.2 Integration & E2E
+- API: [Tool]
+- Components: [Tool]
+- Critical paths: [List flows]
+
+---
+
+<!-- SECTION:DEPLOYMENT -->
+## 12. Deployment & Monitoring
+
+### 12.1 Environment Flow
+```
+Local → Dev → Staging → Prod
+       ↓      ↓         ↓
+    [CI]   [QA]    [Smoke]
+```
+
+### 12.2 Rollback
+1. Detect: [How]
+2. Decide: [Criteria]
+3. Execute: `[command]`
+4. Verify: [Check]
+
+### 12.3 Key Metrics & Alerts
+| Metric | Warning | Critical | Action |
+|--------|---------|----------|--------|
+| Error rate | >1% | >5% | [Page on-call] |
+| Response | >2s | >5s | [Check logs] |
+
+---
+
+<!-- SECTION:APPENDIX -->
+## 13. Appendix
+
+### 13.1 Environment Variables
+```bash
+API_BASE_URL=     # Required
+AUTH_SECRET=      # Required, 32+ chars
+NODE_ENV=         # development|staging|production
+```
+
+### 13.2 API Contracts
+```typescript
+// Endpoint: Method + path
+interface Request { }
+interface Response { }
+interface ErrorResponse { }
+```
+
+### 13.3 Glossary
+| Term | Definition | Context |
+|------|------------|---------|
+| [Term] | [Def] | [Usage] |
+
+### 13.4 Weekly Update Template
+**Week of [Date]**
+- Completed: [List]
+- In Progress: [List]
+- Next: [List]
+- Blockers: [List]
+
+---
+
+## 🤖 AI Instructions
+
+**When updating this plan**:
+1. Always update §2.4 Session Checkpoint at end of response
+2. Mark state transitions (⏳→🚧→✅) when criteria met
+3. Add Discoveries to §5 as you learn
+4. Flag Decisions in §6 when blocked
+5. Keep Token Budget in mind - defer non-critical sections
+6. Use section numbers (§X.Y) when referencing
+7. Preserve human edits (check Last Updated metadata)
+8. If agents.md exists, respect agent boundaries
+
+**Format requirements**:
+- Tables: Always use markdown table format
+- Code: Always use triple backticks with language
+- States: Use emoji (✅🚧⏳❌)
+- Dates: YYYY-MM-DD format
+- Estimates: Include unit (h/d/w)
